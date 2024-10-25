@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <!-- Favicon link from an external source -->
+    <link
+      rel="icon"
+      href="https://img.icons8.com/?size=128&id=hFC8W4GX3NOI&format=png"
+      type="image/png"
+    />
+    <!-- Font Awesome for Icons (Optional) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-papY1eJcUJrduJHYF7OqRGG9qXls0Mg2fB1EjdSN/6zH8Ai1s6nEuKC6eGHp+0YbbS1og+ZZmFXmWNE4E3JK1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="container result-container">
+      <h1>Prediction Result</h1>
+      <p class="result-description">{{ prediction }}</p>
+
+      <!-- Dynamic Result Styling -->
+      <div
+        class="{% if result == 'High Risk' %}high-risk{% else %}low-risk{% endif %}"
+      >
+        <p>{{ result_message }}</p>
+      </div>
+
+      <!-- Predict Again Button -->
+      <a class="btn btn-primary" href="{% url 'prediction' %}">Predict Again</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,321 @@
+/* styles.css */
+
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* ---------------------------------------------------
+   General Styles
+--------------------------------------------------- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F0F8FF; /* Alice Blue */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333333; /* Dark Gray */
+}
+
+.container {
+    background-color: #FFFFFF; /* White */
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 600px; /* Increased max-width for better spacing */
+    text-align: center;
+}
+
+/* ---------------------------------------------------
+   Heading Styles
+--------------------------------------------------- */
+h1 {
+    color: #1E90FF; /* Dodger Blue */
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ---------------------------------------------------
+   Description Styles
+--------------------------------------------------- */
+.form-description,
+.result-description {
+    margin-bottom: 30px;
+    color: #555555; /* Slightly Lighter Dark Gray */
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* ---------------------------------------------------
+   Form Styles with Advanced Input Fields
+--------------------------------------------------- */
+.form-group {
+    position: relative;
+    margin-bottom: 35px;
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+    padding: 0 5px;
+    color: #666666;
+    font-size: 1em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input.form-input,
+.form-group select.form-select {
+    width: 100%;
+    padding: 16px 20px 16px 50px; /* Increased padding for icons */
+    border: 1px solid #CCCCCC; /* Light Gray Border */
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #FFFFFF; /* White Background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+.form-group input.form-input:focus,
+.form-group select.form-select:focus {
+    border-color: #1E90FF; /* Primary Color on Focus */
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.3); /* Subtle Shadow */
+    outline: none;
+}
+
+/* Floating Labels */
+.form-group input.form-input:focus + label,
+.form-group input.form-input:not(:placeholder-shown) + label,
+.form-group select.form-select:focus + label,
+.form-group select.form-select:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 35px;
+    font-size: 0.85em;
+    color: #1E90FF;
+    background-color: #FFFFFF;
+    padding: 0 5px;
+}
+
+/* Icons Inside Input Fields */
+.form-group .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #999999;
+    font-size: 1.2em;
+    pointer-events: none;
+}
+
+/* Validation Feedback */
+.form-group input.form-input.valid,
+.form-group select.form-select.valid {
+    border-color: #28A745; /* Success Green */
+}
+
+.form-group input.form-input.invalid,
+.form-group select.form-select.invalid {
+    border-color: #DC3545; /* Danger Red */
+}
+
+.errorlist {
+    color: #DC3545; /* Danger Red */
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+    font-size: 0.9em;
+    margin-left: 50px; /* Align with input fields */
+}
+
+/* ---------------------------------------------------
+   Button Styles
+--------------------------------------------------- */
+button[type="submit"],
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #1E90FF, #FF6347); /* Gradient Background */
+    color: #FFFFFF; /* White Text */
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover,
+.btn:hover {
+    background: linear-gradient(135deg, #1C86EE, #EE5C42); /* Darker Gradient on Hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #28A745; /* Success Green */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Darker Green */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------------------------------------
+   Utility Classes
+--------------------------------------------------- */
+.text-left {
+    text-align: left;
+}
+
+/* ---------------------------------------------------
+   Additional Styles for Result Page
+--------------------------------------------------- */
+.result-container {
+    /* Inherits .container styles */
+    background-color: #FFFFFF; /* White */
+    padding: 40px 35px; /* Increased padding for emphasis */
+    border: 2px solid #E0E0E0; /* Light Border */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------------
+   Dynamic Result Styling
+--------------------------------------------------- */
+.high-risk {
+    background-color: #FFE5E5; /* Light Red Background */
+    border: 2px solid #DC3545; /* Danger Red Border */
+    color: #DC3545; /* Danger Red Text */
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.low-risk {
+    background-color: #E8F5E9; /* Light Green Background */
+    border: 2px solid #28A745; /* Success Green Border */
+    color: #28A745; /* Success Green Text */
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ---------------------------------------------------
+   Favicon Styling (Optional)
+--------------------------------------------------- */
+link[rel="icon"] {
+    /* Keeps the favicon visible */
+    display: inline;
+}
+
+/* ---------------------------------------------------
+   Responsive Design Enhancements
+--------------------------------------------------- */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    button[type="submit"],
+    .btn {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-group label {
+        left: 35px;
+    }
+
+    .form-group input.form-input:focus + label,
+    .form-group input.form-input:not(:placeholder-shown) + label,
+    .form-group select.form-select:focus + label,
+    .form-group select.form-select:not(:placeholder-shown) + label {
+        left: 40px;
+    }
+
+    .errorlist {
+        margin-left: 45px; /* Adjust for smaller screens */
+    }
+}
+
+/* ---------------------------------------------------
+   Enhanced Accessibility
+--------------------------------------------------- */
+button:focus,
+a:focus,
+input:focus,
+select:focus {
+    outline: 3px dashed #1E90FF; /* Primary Color Outline */
+    outline-offset: 4px;
+}
+
+/* ---------------------------------------------------
+   Additional Enhancements
+--------------------------------------------------- */
+/* Smooth transition for all interactive elements */
+button,
+a,
+input,
+select {
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for form inputs */
+.form-group input.form-input:hover,
+.form-group select.form-select:hover {
+    border-color: #1E90FF; /* Primary Color on Hover */
+}
+
+/* Disabled button state */
+button:disabled,
+.btn:disabled {
+    background: #CCCCCC;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Responsive font sizes for smaller devices */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .form-description,
+    .result-description {
+        font-size: 1em;
+    }
+
+    button[type="submit"],
+    .btn {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
